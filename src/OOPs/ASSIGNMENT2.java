@@ -37,7 +37,7 @@ class Student {
     private int TotalMark;
 
     static {
-        UniqueNo = 0;
+        UniqueNo = 1;
         }
 
         Student() {
