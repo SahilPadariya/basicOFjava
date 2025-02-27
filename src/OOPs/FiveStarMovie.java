@@ -2,7 +2,7 @@ package OOPs;
 
 public class FiveStarMovie {
     public static void main(String[] args) {
-        Movie []arr= {
+        Movie[] arr = {
                 new Movie("BAHUBALI", "RAJ HANSH", "4 STAR"),
                 new Movie("STREE2", "YASH RAJ"),
                 new Movie("SANAM TERI KASASM", "VELENTIAN"),
@@ -23,7 +23,6 @@ public class FiveStarMovie {
             a[i].display();
         }
     }
-
     public static Movie[] Get5StarMoive(Movie[] arr) {
         int c = 0;
         for (int i = 0; i < arr.length; i++) {
