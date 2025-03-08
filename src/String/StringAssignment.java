@@ -49,8 +49,8 @@ public class StringAssignment {
 //
 //      //5. Program to check if two strings are same or not (without using inbuilt function .equals())
 //
-//        if (name == name2) {
-//            System.out.println("true");
+//        if (name != name2) {
+//            System.out.println("false");
 //            return;
 //        }
 //        if (name.length() == name2.length()) {
@@ -61,8 +61,6 @@ public class StringAssignment {
 //                }
 //            }
 //            System.out.println("true");
-//        } else {
-//            System.out.println("false");
 //        }
 //        6. Update a character in a string (without using .replace() function)
 
@@ -82,16 +80,10 @@ public class StringAssignment {
 //        int index = 0;
 //        for (i = 0; i < arr.length; i++) {
 //            for (index = 0; index < arr.length - 1; index++) {
-//
-//                boolean isswapped=false;
-//
 //                if (arr[index] > arr[index + 1]) {
 //                    char temp = arr[index + 1];
 //                    arr[index + 1] = arr[index];
 //                    arr[index] = temp;
-//                }
-//                if (!isswapped){
-//                    break;
 //                }
 //            }
 //        }
@@ -101,18 +93,12 @@ public class StringAssignment {
 //        8.Print frequency of all the characters in string (expercted TC O(n), Aux SC O(1))
 
         for (i = 0; i < fruit.length(); i++) {
-            char c = fruit.charAt(i);
-            countfreq[(int) c]++;
+            int asci = fruit.charAt(i);
+            countfreq[asci]+=1;
         }
-        for (i=0;i< fruit.length();i++){
-            char c= fruit.charAt(i);
-            if (countfreq[i]>0){
-                System.out.println(c+"-->"+countfreq[(int)i]);
-            }
-        }
-            for (i = 0; i <fruit.length(); i++) {
-                char c = fruit.charAt(i);
-                System.out.println(c + "-> " + countfreq[(int)c]);
-            }
+        for (i = 0; i < fruit.length(); i++) {
+            int asci= fruit.charAt(i);
+            System.out.println(fruit.charAt(i)+" -> "+countfreq[asci]);
         }
     }
+}

@@ -2,7 +2,7 @@ package String;
 
 public class Question11 {
     public static void main(String[] args) {
-        String s1 = "how are you brother what are you doing";
+        String s1 = "good evening";
         String s2 = "";
         String[] arr = s1.split(" ");
         char[] charArray = s1.toCharArray();
