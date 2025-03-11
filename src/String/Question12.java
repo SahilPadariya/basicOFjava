@@ -7,10 +7,8 @@ public class Question12 {
         for (int i=0;i<s1.length();i++){
             int asci=s1.charAt(i);
             arr[asci]=arr[asci]+1;
-        }
-        for (int i=0;i<arr.length;i++){
-            if (arr[i]>1){
-                System.out.println((char)i);
+            if (arr[asci]>1){
+                System.out.println(s1.charAt(i));
             }
         }
     }

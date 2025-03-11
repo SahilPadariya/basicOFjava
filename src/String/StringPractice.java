@@ -2,52 +2,33 @@ package String;
 
 public class StringPractice {
     public static void main(String[] args) {
-        String s1 = "madam eye nitin",s="";
-        int index = 0,index1=0;
-        boolean flag=true;
-        for (int i = 0; i < s1.length(); i++) {
-            if (s1.charAt(i) == ' ') {
-                s=s+reverce(i - 1, index, s1)+" ";
-                index=i+1;
+        String word1[]={"abc","d","defg"};
+        String word2[]={"abcddef"};
+        int i = 0, j = 0;
+        int pointer1 = 0, pointer2 = 0;
+        while (i < word1.length && j < word2.length) {
+            char ch1 = word1[i].charAt(pointer1);
+            char ch2 = word2[j].charAt(pointer2);
+            if (ch1 != ch2) {
+                System.out.println("false");
+                return;
+            }
+            pointer1++;
+            pointer2++;
+            if (pointer1 == word1[i].length()) {
+                i++;
+                pointer1 = 0;
+            }
+            if (pointer2 == word2[j].length()) {
+                j++;
+                pointer2 = 0;
             }
         }
-        s=s+reverce(s1.length()-1,index,s1);
-        System.out.println(s);
-
-        //cheak palindrome
-
-        for (int i=0;i<s1.length();i++){
-            if (s1.charAt(i)==' '){
-                if (!cheak(i-1,index1,s1)) {
-                    flag = false;
-                    System.out.println(flag);
-                    return;
-                }
-                index1=i+1;
-            }
+        if (i==word1.length && j==word2.length){
+            System.out.println("true");
         }
-        if (!cheak(s1.length()-1,index1,s1)) {
-            flag = false;
+        else {
+            System.out.println("false");
         }
-        System.out.println(flag);
-
-    }
-    public static String reverce(int i, int index, String s) {
-        String s2 = "";
-        while (i >= index) {
-            s2 = s2 + s.charAt(i);
-            i--;
-        }
-        return s2;
-    }
-    public static boolean cheak(int i,int index,String s){
-        while (index<i){
-            if (s.charAt(index)!=s.charAt(i)){
-                return false;
-            }
-            i--;
-            index++;
-        }
-        return true;
     }
 }

@@ -6,11 +6,11 @@ import java.util.Arrays;
 public class StringAssignment {
     public static void main(String[] args) {
         String fruit = "apple";
-        String name = "sallu";
+        String name = "apple is so sweet";
         String name2 = "apple";
         String name1 = "Apple Bnana Mango Orange";
-        char[] arr = name.toCharArray();
-        int i = 0, j = arr.length - 1;
+        StringBuilder s1=new StringBuilder(name);
+//        int i = 0, j = arr.length - 1;
         int[] countfreq = new int[128];
 
         // 1. Print a string in reverse order
@@ -77,28 +77,28 @@ public class StringAssignment {
 //
 ////        7. Sort a string of lowercase
 //
-//        int index = 0;
-//        for (i = 0; i < arr.length; i++) {
-//            for (index = 0; index < arr.length - 1; index++) {
-//                if (arr[index] > arr[index + 1]) {
-//                    char temp = arr[index + 1];
-//                    arr[index + 1] = arr[index];
-//                    arr[index] = temp;
-//                }
-//            }
-//        }
+        int index = 0;
+        for (int i = 0; i < s1.length(); i++) {
+            for (index = 0; index < s1.length() - 1; index++) {
+                if (s1.charAt(index) > s1.charAt(index + 1)) {
+                    char temp = s1.charAt(index+1);
+                    s1.setCharAt(index+1,s1.charAt(index));
+                    s1.setCharAt(index,temp);
+                }
+            }
+        }
 //        name = new String(arr);
-//        System.out.println(name);
+        System.out.println(s1);
 
 //        8.Print frequency of all the characters in string (expercted TC O(n), Aux SC O(1))
 
-        for (i = 0; i < fruit.length(); i++) {
-            int asci = fruit.charAt(i);
-            countfreq[asci]+=1;
-        }
-        for (i = 0; i < fruit.length(); i++) {
-            int asci= fruit.charAt(i);
-            System.out.println(fruit.charAt(i)+" -> "+countfreq[asci]);
-        }
+//        for (i = 0; i < fruit.length(); i++) {
+//            int asci = fruit.charAt(i);
+//            countfreq[asci]+=1;
+//        }
+//        for (i = 0; i < fruit.length(); i++) {
+//            int asci= fruit.charAt(i);
+    //            System.out.println(fruit.charAt(i)+" -> "+countfreq[asci]);
+//        }
     }
 }

@@ -3,19 +3,27 @@ package String;
 public class Question14 {
     public static void main(String[] args) {
         String s1="madam eye nitin";
-        String s2[]=s1.split(" ");
-        for (int i=0;i<s2.length;i++){
-            char c[]=s2[i].toCharArray();
-            int start=0,end=c.length-1;
-            while (start<=end){
-                if (c[start]!=c[end]){
-                    System.out.println("not palin drome");
+        int index=0;
+        for (int i=0;i<s1.length();i++){
+            if (i==s1.length() || s1.charAt(i)==' '){
+                boolean check=ispalindrome(index,i-1,s1);
+                if (check==false){
+                    System.out.println(check);
                     return;
                 }
-                start++;
-                end--;
+                index= i+1;
             }
         }
-        System.out.println("palindrome");
+        System.out.println(true);
+    }
+    public static boolean ispalindrome(int index,int i,String s){
+        while (index<i){
+            if (s.charAt(index) != s.charAt(i)){
+                return false;
+            }
+            i--;
+            index++;
+        }
+        return true;
     }
 }
