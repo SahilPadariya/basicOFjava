@@ -4,6 +4,8 @@ public class Question14 {
     public static void main(String[] args) {
         String s1="madam eye nitin";
         int index=0;
+        StringBuilder s3=new StringBuilder();
+        s3.append(s1.substring(0,1));
         for (int i=0;i<s1.length();i++){
             if (i==s1.length() || s1.charAt(i)==' '){
                 boolean check=ispalindrome(index,i-1,s1);
