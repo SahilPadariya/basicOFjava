@@ -5,18 +5,28 @@ import java.util.Stack;
 public class Question3 {
     public static void main(String[] args) {
         String str="how are you";
-        Stack<Character> stack=new Stack<>();
+        int index=0;
         for (int i=0;i<str.length();i++){
-            stack.push(str.charAt(i));
-            if (str.charAt(i)==' ' || i==str.length()-1){
-                reverse(i,stack);
+            if (str.charAt(i)==' '){
+                reverse(str,i-1,index);
+                index=i+1;
+            }
+            else if (i==str.length()-1){
+                reverse(str,i,index);
+                index=i+1;
             }
         }
-        System.out.println(stack);
     }
-    public static void reverse(int i, Stack<Character> stack){
-        for (int j=i;j>=0;j--){
-            System.out.println(stack.pop());
+    public static void reverse(String str,int i,int index){
+        Stack<Character> stack=new Stack<>();
+        if (stack.isEmpty()){
+            stack.push(' ');
         }
+       for (int j=index;j<=i;j++) {
+           stack.push(str.charAt(j));
+       }
+       while (!stack.isEmpty()) {
+           System.out.print(stack.pop());
+       }
     }
 }
