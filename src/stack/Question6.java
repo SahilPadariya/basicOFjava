@@ -5,7 +5,7 @@ import java.util.Stack;
 public class Question6 {
     public static void main(String[] args) {
         Stack<Integer> stack=new Stack<>();
-
+        Stack<Integer> stack1=new Stack<>();
         stack.push(10);
         stack.push(20);
         stack.push(30);
@@ -16,17 +16,17 @@ public class Question6 {
         stack.push(80);
         stack.push(90);
         stack.push(100);
-
-        delete(stack,stack.size(),0);
+        delete(stack,stack1);
         System.out.println(stack);
+
     }
-    public static void delete(Stack<Integer> stack,int size,int current){
-        if (stack.isEmpty() || current==size/2){
-            stack.pop();
-            return;
+    public static void delete(Stack<Integer> stack,Stack<Integer> stack1){
+        for (int i=0;i<=stack.size()/2;i++){
+            stack1.push(stack.pop());
         }
-        int temp = stack.pop(); // jetli vaar if condition khoti padse tya sudhi no record sotre thase
-        delete(stack, size, current + 1); // current ma add thatu jase jya sudhi mid na male
-        stack.push(temp); // record thayeli aa ele pachi (LIFO) ma add thase
+        stack.pop();
+        while (!stack1.isEmpty()){
+            stack.push(stack1.pop());
+        }
     }
 }

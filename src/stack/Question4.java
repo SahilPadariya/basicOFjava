@@ -40,7 +40,7 @@ public class Question4 {
 
         //search
 
-        System.out.println(stack.search(30));
+        System.out.println(stack.search(20));
 
     }
 }
