@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class Question12 {
     public static void main(String[] args) {
-        String s="-9/*+5346";
+        String s="-9/+**53415";
         Stack<String> stack=new Stack<>();
 
         for (int i=s.length()-1;i>=0;i--){

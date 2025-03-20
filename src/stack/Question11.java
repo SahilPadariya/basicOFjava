@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class Question11 {
     public static void main(String[] args) {
-        String s="953+4*6/-";
+        String s="53415/+**9-";
         Stack<String>stack=new Stack<>();
         for (int i=0;i<s.length();i++){
             char ch=s.charAt(i);
