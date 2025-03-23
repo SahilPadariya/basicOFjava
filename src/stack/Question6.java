@@ -21,7 +21,8 @@ public class Question6 {
 
     }
     public static void delete(Stack<Integer> stack,Stack<Integer> stack1){
-        for (int i=0;i<=stack.size()/2;i++){
+        int mid=stack.size()/2;
+        for (int i=0;i<mid;i++){
             stack1.push(stack.pop());
         }
         stack.pop();

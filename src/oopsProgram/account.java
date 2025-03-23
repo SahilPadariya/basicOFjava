@@ -3,7 +3,7 @@ package oopsProgram;
 public class account {
     public static void main(String[] args) {
     Account2 a2 = new Account2();
-    a2.setaccdetail(100202944901L,"RAHULBHAI",3000,10);
+    a2.setaccdetail(1002029458901L,"RAHULBHAI",3000,10);
     a2.calculateInterest();
     a2.Accdetail();
     }

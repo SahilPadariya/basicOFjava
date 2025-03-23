@@ -8,11 +8,14 @@ public class Question8 {
     public static void main(String[] args) {
         Stack<Integer> st = new Stack<>();
         min = Integer.MAX_VALUE;
-        push(st, 10);
         push(st, 5);
+        push(st, 7);
         push(st, 8);
-        push(st, 6);
+        push(st, 3);
+        push(st,1);
+        push(st,6);
 
+        pop(st);
         pop(st);
 
         System.out.println(getmin(st));
