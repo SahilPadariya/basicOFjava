@@ -5,72 +5,78 @@ import java.util.Arrays;
 
 public class DEQueue {
     static int arr[]=new int[10];
-    static int infir=-1,delfir=-1,lasin=arr.length,lastdel=arr.length;
+    static int rear=-1,front=0;
     public static void main(String[] args) {
         InFirst(10);
         InFirst(20);
         InFirst(30);
         InFirst(40);
         InFirst(50);
-        InFirst(60);
+
+        InLast(60);
+        InLast(70);
+        InLast(80);
+        InLast(90);
+        InLast(100);
+
 
         DelFir();
-
-        LastIn(100);
-        LastIn(90);
-        LastIn(80);
-        LastIn(70);
-
-        LastDEl();
-        LastDEl();
         LastDEl();
 
-        System.out.println(Arrays.toString(arr));
+        print();
     }
 
     public static void InFirst(int val){
-        if(infir+1==lasin){
+        if (rear==-1){
+            rear++;
+            arr[rear]=val;
+        }
+        else if (rear==arr.length-1){
             System.out.println("arr is full");
             return;
         }
         else{
-            infir++;
-            arr[infir]=val;
+                for (int i=rear;i>=front;i--){
+                    arr[i+1]=arr[i];
+                }
+                arr[front]=val;
+                rear++;
         }
     }
 
-    public static void DelFir(){
-        if (delfir==infir){
-            infir=delfir=-1;
-        } else if (delfir==-1 && infir==-1) {
+    public static void DelFir() {
+        if (rear == -1) {
             System.out.println("arr is empty");
             return;
-        }else {
-            delfir++;
-            arr[delfir] = 0;
+        } else {
+            for (int i = front; i < rear; i++) {
+                arr[i] = arr[i + 1];
+            }
         }
+        rear--;
     }
 
-    public static void LastIn(int val){
-        if(lasin-1==infir){
-            System.out.println("arr is full");
-            return;
-        }
-        else{
-            lasin--;
-            arr[lasin]=val;
-        }
+    public static void InLast(int val){
+    if (rear==arr.length-1){
+        System.out.println("arr is full");
     }
+    else{
+        rear++;
+        arr[rear]=val;
+    }
+}
 
     public static void LastDEl(){
-        if (lastdel==lasin){
-            lastdel=lasin=arr.length;
-        } else if (lastdel==arr.length && lasin==arr.length) {
+        if (rear==-1){
             System.out.println("arr is empty");
             return;
         }else {
-            lastdel--;
-            arr[lastdel] = 0;
+            rear--;
+        }
+    }
+    public static void print(){
+        for (int i=front;i<=rear;i++){
+            System.out.println(arr[i]);
         }
     }
 }
