@@ -7,21 +7,29 @@ public class DEQueue {
     static int arr[]=new int[10];
     static int rear=-1,front=0;
     public static void main(String[] args) {
-        InFirst(10);
-        InFirst(20);
-        InFirst(30);
-        InFirst(40);
-        InFirst(50);
 
-        InLast(60);
-        InLast(70);
-        InLast(80);
-        InLast(90);
-        InLast(100);
+//        InFirst(10);
+//        InFirst(20);
+//        InFirst(30);
+//        InFirst(40);
+//        InFirst(50);
+//
+//        InLast(60);
+//        InLast(70);
+//        InLast(80);
+//        InLast(90);
+//        InLast(100);
+        InLast(5);
+        InFirst(1);
+        InFirst(2);
+        InFirst(3);
 
-
-        DelFir();
         LastDEl();
+        DelFir();
+
+
+//        DelFir();
+//        LastDEl();
 
         print();
     }
@@ -75,8 +83,12 @@ public class DEQueue {
         }
     }
     public static void print(){
+        if(rear==-1){
+            System.out.println("arr is Empty");
+            return;
+        }
         for (int i=front;i<=rear;i++){
-            System.out.println(arr[i]);
+            System.out.print(arr[i]+" ");
         }
     }
 }

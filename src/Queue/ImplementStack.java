@@ -17,12 +17,13 @@ public class ImplementStack {
         InsertHavy(30);
         InsertHavy(40);
 
-        DeleteLoos();
-        DeleteLoos();
-        DeleteLoos();
-        DeleteLoos();
+//        DeleteLoos();
+//        DeleteLoos();
+//        DeleteLoos();
+//        DeleteLoos();
 
         InsertHavy(50);
+        DeleteLoos();
         System.out.println(queue1);
     }
     public static void InsertLoos(int val){
@@ -50,9 +51,8 @@ public class ImplementStack {
                 queue2.add(queue1.poll());
             }
             queue1.add(val);
-            while (!queue2.isEmpty()){
-                queue1.add(queue2.poll());
-            }
+            queue1.addAll(queue2);
+            queue2.clear();
         }
     }
     public static void DeleteLoos(){

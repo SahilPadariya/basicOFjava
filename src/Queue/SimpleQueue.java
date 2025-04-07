@@ -9,17 +9,12 @@ public class SimpleQueue {
     public static void main(String[] args) {
         add(10);
         add(20);
-//
+        add(30);
+        add(40);
+        add(50);
+
         delete();
         delete();
-//        delete();
-//        delete();
-//
-//        add(10);
-//        add(20);
-//        add(30);
-//        add(40);
-//        add(50);
 
         print();
 
@@ -41,17 +36,17 @@ public class SimpleQueue {
             System.out.println("arr is empty");
             return;
         }
-        front++;
-        if (front == rear) {
+        else if (front == rear) {
             front = rear = -1;
         }
+        front++;
     }
 
     public static void print() {
-//        if (front==arr.length-1) {
-//            System.out.println("arr is full");
-//            return;
-//        }
+        if (rear==-1) {
+            System.out.println("arr is Empty");
+            return;
+        }
         for (int i = front+1; i <= rear; i++) {
             System.out.print(arr[i] + " ");
         }

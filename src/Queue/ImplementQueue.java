@@ -8,19 +8,22 @@ public class ImplementQueue {
     static Stack<Integer> stack2=new Stack<>();
 
     public static void main(String[] args) {
-//        pusheasy(10);
-//        pusheasy(20);
-//        pusheasy(30);
-//        pusheasy(40);
-//        pusheasy(50);
-//
-//        pophavy();
-        pushHavy(10);
-        pushHavy(20);
-        pushHavy(30);
+        pusheasy(10);
+        pusheasy(20);
+        pusheasy(30);
+        pusheasy(40);
+        pusheasy(50);
 
-        popeasy();
-        printOnlyDelHavy();
+        pophavy();
+        System.out.println(stack1);
+//        pushHavy(10);
+//        pushHavy(20);
+//        pushHavy(30);
+//        pushHavy(40);
+//        pushHavy(50);
+
+//        popeasy();
+//        printOnlyDelHavy();
     }
     public static void pusheasy(int val){
         stack1.push(val);

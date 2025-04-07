@@ -30,15 +30,15 @@ public class Circular {
 //        delete();
 //        delete();
 
+        add(10);
+        add(20);
+        add(30);
+        add(40);
         add(50);
+        delete();
+        delete();
         add(60);
         add(70);
-        add(80);
-        delete();
-        delete();
-        add(90);
-        add(100);
-        add(110);
         print();
     }
     public static void add(int val){
@@ -52,7 +52,7 @@ public class Circular {
        arr[rear]=val;
     }
     public static void delete() {
-        if(front==-1){
+        if(rear==-1){
             System.out.println("arr is empty");
             return;
         } else if (front==rear) {
@@ -62,17 +62,15 @@ public class Circular {
         }
     }
     public static void print(){
-        if (front==-1){
+        if (rear==-1){
             System.out.println("arr is empty");
             return;
         }
         int i=front;
-        while (true){
+        while (i!=rear){
             System.out.println(arr[i]);
-            if (i==rear){
-                break;
-            }
             i=(i+1)%arr.length;
         }
+        System.out.println(arr[i]);
     }
 }

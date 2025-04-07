@@ -23,6 +23,10 @@ public class ReverseK {
     }
 
     public static void reverse(){
+        if(deque.isEmpty()){
+            System.out.println("dq is empty");
+            return;
+        }
         for (int i=0;i<k;i++){
            help.add(deque.poll());
         }
