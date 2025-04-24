@@ -6,16 +6,16 @@ public class ListFunctions {
     public static void main(String[] args) {
         LinkedList linkedList=new LinkedList();
         linkedList.insert(10);
-        linkedList.insert(20);
-        linkedList.insert(30);
+        linkedList.insert(10);
+        linkedList.insert(10);
 
-        linkedList.insert(40);
-        linkedList.insert(50);
-        linkedList.insert(60);
-        linkedList.insert(70);
-        linkedList.insert(80);
+        linkedList.insert(10);
+        linkedList.insert(10);
+        linkedList.insert(10);
+        linkedList.insert(10);
+        linkedList.insert(10);
 
-        linkedList.delet(50);
+        linkedList.delet(10);
 
         linkedList.print();
 
@@ -177,7 +177,6 @@ class LinkedList {
                     temp = temp.next;
                 }
             }
-
             tail = temp;
             if (flag==false){
                 System.out.println("Not Found");

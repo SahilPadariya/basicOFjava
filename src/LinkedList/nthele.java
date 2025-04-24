@@ -1,5 +1,6 @@
 package LinkedList;
 
+
 public class nthele {
     public static void main(String[] args) {
         linkedlist3 l=new linkedlist3();

@@ -8,8 +8,9 @@ public class checkloopinlist {
         l.insert(30);
         l.insert(40);
         l.insert(50);
+        l.insert(60);
 
-        l.addloop(30);
+        l.addloop(10);
 
         System.out.println(l.checkloop());
 
@@ -23,7 +24,7 @@ class node8{
     }
 }
 class l8{
-    node8 head,tail;
+    public node8 head,tail;
     public void insert(int val){
         node8 nn=new node8(val);
         if (head==null){
@@ -48,18 +49,17 @@ class l8{
         }
         t.next=temp;
     }
-    public boolean checkloop(){
-        node8 slow=head,fast=head;
+    public boolean checkloop() {
+        node8 slow = head, fast = head;
 
-//        while (fast != null && fast.next != null){
-//            slow=slow.next;
-//            fast=fast.next.next;
-//            if (slow==fast){
+//        while (fast != null && fast.next != null) {
+//            slow = slow.next;
+//            fast = fast.next.next;
+//            if (slow == fast) {
 //                return true;
 //            }
 //        }
 //        return false;
-
 //        while (fast != null && fast.next != null){
 //            slow=slow.next;
 //            fast=fast.next.next;
@@ -67,16 +67,17 @@ class l8{
 //                int c=1;
 //                node8 t=slow.next;
 //                while (t != slow) {
-//                    slow = slow.next;
+//                    t = t.next;
 //                    c++;
 //                }
 //                System.out.println(c);
 //                return true;
 //            }
 //        }
-        int c=0;
-        while (fast != null && fast.next != null) {
+        int c=1;
+        while (fast != null) {
             fast=fast.next.next;
+            slow=slow.next;
             if (fast==slow){
                 System.out.println(c);
                 return true;
