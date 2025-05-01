@@ -5,12 +5,12 @@ import java.util.Map;
 
 public class LRU {
     public static void main(String[] args) {
-        LRUCache lruCache=new LRUCache(4);
+        LRUCache lruCache=new LRUCache(0);
 
         lruCache.put(1,1);
-        lruCache.put(2,2);
-        lruCache.put(3,3);
-        lruCache.put(4,4);
+//        lruCache.put(2,2);
+//        lruCache.put(3,3);
+//        lruCache.put(4,4);
 
         System.out.println(lruCache.get(1));
 
@@ -55,6 +55,10 @@ class LRUCache {
     }
 
     public void put(int key, int value) {
+        if(cap==0){
+            System.out.println("You cant add value");
+            return;
+        }
         if (map.containsKey(key)) {
             Node node = map.get(key);
             remove(node);
