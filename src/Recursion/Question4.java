@@ -9,7 +9,7 @@ public class Question4 {
         if (index==arr.length){
             return;
         }
-        print(arr,index+1);
         System.out.print(arr[index]+" ");
+        print(arr,index+1);
     }
 }
