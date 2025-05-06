@@ -11,10 +11,9 @@ public class lab6 {
             System.out.println(current);
             return;
         }
-        printSubsets(str, current, index + 1);
-        // Include current character
+
         printSubsets(str, current + str.charAt(index), index + 1);
 
-        // Exclude current character
+        printSubsets(str, current, index + 1);
     }
 }
