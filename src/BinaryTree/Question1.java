@@ -10,8 +10,9 @@ public class Question1 {
         bt.Root.left.right=new Node1(5);
         bt.Root.right.left=new Node1(6);
         bt.Root.right.right=new Node1(7);
-        bt.countNode(bt.Root);
-        System.out.println(bt.ans);
+        System.out.println(bt.countNode(bt.Root));
+//        System.out.println(bt.ans);
+
     }
 }
 class Node1{
@@ -24,11 +25,12 @@ class Node1{
 class Btree{
     Node1 Root;
     int ans=0;
-    public void countNode(Node1 Root){
-        if (Root==null)return;
-        countNode(Root.left);
-        ans++;
-        countNode(Root.right);
+    public int countNode(Node1 Root){
+        if (Root==null)return 0;
+//        countNode(Root.left);
+//        ans++;
+//        countNode(Root.right);
+        return 1+countNode(Root.left)+countNode(Root.right);
     }
 }
 

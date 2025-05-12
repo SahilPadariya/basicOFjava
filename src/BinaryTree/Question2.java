@@ -42,20 +42,10 @@ class btree2{
         NthNode(Root.right,nth);
     }
     boolean flag = false;
-    public void FindElement(Node2 root,int val) {
-        if (root==null){
-            return;
-        }
-        if (root.val==val){
-            flag=true;
-            return;
-        }
-        FindElement(root.left,val);
-        if (root.val==val){
-            flag=true;
-            return;
-        }
-        FindElement(root.right,val);
+    public boolean FindElement(Node2 root,int val) {
+        if (root==null)return false;
+        if (root.val==val)return true;
+        return FindElement(root.left,val)&&FindElement(root.right,val);
     }
     int max=0;
     public int maxheight(Node2 root,int num){
