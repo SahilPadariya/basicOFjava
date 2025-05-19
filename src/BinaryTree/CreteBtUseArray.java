@@ -11,7 +11,7 @@ public class CreteBtUseArray {
         binaryTree.print(root);
     }
 }
-class BinaryTree {
+class BinaryTree extends Object {
 
     public Node CreteBT(int[] arr) {
         if (arr.length == 0) {
@@ -44,6 +44,5 @@ class BinaryTree {
         System.out.println(root.val);
         print(root.left);
         print(root.right);
+        }
     }
-}
-

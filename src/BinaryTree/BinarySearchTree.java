@@ -5,17 +5,16 @@ import javax.xml.stream.XMLInputFactory;
 public class BinarySearchTree {
     public static void main(String[] args) {
         BST bst=new BST();
-        bst.insert(10);
-        bst.insert(20);
-        bst.insert(9);
-        bst.insert(8);
-        bst.insert(25);
-        bst.insert(15);
+        bst.insert(5);
+        bst.insert(3);
+        bst.insert(6);
         bst.insert(2);
+        bst.insert(4);
+        bst.insert(7);
 
-        bst.delete(26);
-        bst.delete(15);
-        System.out.println(bst.search(10));
+        bst.delete(7);
+//        bst.delete(15);
+//        System.out.println(bst.search(10));
         bst.print();
     }
 }

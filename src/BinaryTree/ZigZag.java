@@ -15,7 +15,6 @@ public class ZigZag {
 }
 class zigzig {
     Node root;
-
     public List<List<Integer>> zigzagLevelOrder(Node root) {
         List<List<Integer>> result = new LinkedList<>();
         if (root == null) {
