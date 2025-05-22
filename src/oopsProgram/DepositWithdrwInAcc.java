@@ -9,29 +9,31 @@ public class DepositWithdrwInAcc {
         a1.displaydetail();
     }
 }
-class acc{
+class acc {
     private long accountNum;
     private String custname;
     private float balance;
 
-    public void setaccdetail(long accountNum,String custname,float balance){
-    this.accountNum=accountNum;
-    this.custname=custname;
-    this.balance=balance;
+    public void setaccdetail(long accountNum, String custname, float balance) {
+        this.accountNum = accountNum;
+        this.custname = custname;
+        this.balance = balance;
     }
-    public void deposit(int deposit){
-       balance=balance+deposit;
+
+    public void deposit(int deposit) {
+        balance = balance + deposit;
     }
-    public void withdraw(int withdraw){
-        if (balance<withdraw){
+
+    public void withdraw(int withdraw) {
+        if (balance < withdraw) {
             System.out.println("out off balance");
             return;
-        }
-        else {
-            balance=balance-withdraw;
+        } else {
+            balance = balance - withdraw;
         }
     }
-    public void displaydetail(){
+
+    public void displaydetail() {
         System.out.println(accountNum);
         System.out.println(custname);
         System.out.println(balance);
